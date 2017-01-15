@@ -26,7 +26,8 @@ class register extends CI_Controller{
 
 	public function tambah_member(){
 		$this->form_validation->set_rules('nomor_telepon','Nomor Telepon','required');
-/*		$this->form_validation->set_rules('nomor_telepon','Nomor Telepon','required');*/
+		$this->form_validation->set_rules('nama_member','Nama Member','required');
+		$this->form_validation->set_rules('password_member','Password Member','required');
 		$this->form_validation->set_rules('jenis_kelamin_member','Jenis Kelamin Member');
 		$this->form_validation->set_rules('tanggal_lahir_member','Tanggal Lahir Member','required');
 		$this->form_validation->set_rules('jenis_member','Jenis Member','required');

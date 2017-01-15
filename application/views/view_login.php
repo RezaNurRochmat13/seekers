@@ -123,7 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	  </div>
 	    <!--/.navbar-collapse-->
 	</nav>
-<div class="banner_1">
+<!-- <div class="banner_1">
 	<div class="container">
 		<div id="search_wrapper1">
 		   <div id="search_form" class="clearfix">
@@ -136,7 +136,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
            </div>
 		</div>
    </div> 
-</div>	
+</div> -->	
 <div class="container">
     <div class="single">  
 	   <div class="col-md-4">
@@ -208,50 +208,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 <div class="col-md-8 single_right">
 	 	   <div class="login-form-section">
                 <div class="login-content">
-                    <form>
+                     <?php echo validation_errors();?>
+        			<?php echo form_open('verifylogin');?>
                         <div class="section-title">
-                            <h3>LogIn to your Account</h3>
+                            <h3>Login Page</h3>
                         </div>
                         <div class="textbox-wrap">
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-user"></i></span>
-                                <input type="text" required="required" class="form-control" placeholder="Username">
+                                <input type="text" required="required" class="form-control" name="nama_member" placeholder="Username">
                             </div>
                         </div>
                         <div class="textbox-wrap">
                             <div class="input-group">
                                 <span class="input-group-addon "><i class="fa fa-key"></i></span>
-                                <input type="password" required="required" class="form-control " placeholder="Password">
+                                <input type="password" required="required" class="form-control" name="password_member" placeholder="Password">
                             </div>
                         </div>
-                     </form>
-                     <div class="forgot">
-						 <div class="login-check">
-				 			<label class="checkbox1"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newsletter</label>
-				         </div>
-				 		  <div class="login-para">
-				 			<p><a href="#"> Forgot Password? </a></p>
-				 		 </div>
-					     <div class="clearfix"> </div>
-			        </div>
-					<div class="login-btn">
+                        <div class="login-btn">
 					   <input type="submit" value="Log in">
+					   <input type="submit" value="Cancel">
+
 					</div>
-					<div class="login-bottom">
-					 <p>With your social media account</p>
-					 <div class="social-icons">
-						<div class="button">
-							<a class="tw" href="#"> <i class="fa fa-twitter tw2"> </i><span>Twitter</span>
-							<div class="clearfix"> </div></a>
-							<a class="fa" href="#"> <i class="fa fa-facebook tw2"> </i><span>Facebook</span>
-							<div class="clearfix"> </div></a>
-							<a class="go" href="#"><i class="fa fa-google-plus tw2"> </i><span>Google+</span>
-							<div class="clearfix"> </div></a>
-							<div class="clearfix"> </div>
-						</div>
-						<h4>Don,t have an Account? <a href="register.html"> Register Now!</a></h4>
-					 </div>
-		           </div>
+                     </form>
+                     
+					
                 </div>
          </div>
    </div>

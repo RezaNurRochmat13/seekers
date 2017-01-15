@@ -131,6 +131,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	   	<?php echo validation_errors()?>
         <h2>Form Pendaftaran Member</h2>
         <form action="<?php echo site_url('register/tambah_member')?>" method="post">
+        	 <div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-3 control-lable" for="lastName">Nama Member</label>
+                <div class="col-md-9">
+                    <input type="text" name="nama_member" class="form-control input-sm"/>
+                </div>
+            </div>
+        </div>
+        	 <div class="row">
+            <div class="form-group col-md-12">
+                <label class="col-md-3 control-lable" for="lastName">Password Member</label>
+                <div class="col-md-9">
+                    <input type="password" name="password_member" class="form-control input-sm"/>
+                </div>
+            </div>
+        </div>
          <div class="row">
             <div class="form-group col-md-12">
                 <label class="col-md-3 control-lable" for="lastName">Nomor Telepon Member</label>

@@ -17,6 +17,8 @@ class model_register_member extends CI_Model{
 
 	public function tambah_member(){
 		$kode_member = $this->input->post('kode_member');
+		$nama_member = $this->input->post('nama_member');
+		$password_member = $this->input->post('password_member');
 		$nomor_telepon = $this->input->post('nomor_telepon');
 		$jenis_kelamin_member = $this->input->post('jenis_kelamin_member');
 		$tanggal_lahir_member = $this->input->post('tanggal_lahir_member');
@@ -25,6 +27,8 @@ class model_register_member extends CI_Model{
 
 		$data = array(
 			'kode_member' => $kode_member,
+			'nama_member' => $nama_member,
+			'password_member' => $password_member,
 			'nomor_telepon' => $nomor_telepon,
 			'jenis_kelamin_member' => $jenis_kelamin_member,
 			'tanggal_lahir_member' => $tanggal_lahir_member,

@@ -9,19 +9,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 class model_dashboard extends CI_Model{
+	var $table='member';
 
 	public function __construct(){
 		parent::__construct();
 		$this->load->database();
 	}
 
-
-
 	public function tampil_kategori(){
 		$this->db->select('nama_kategori_pekerjaan');
 		$query = $this->db->get('kategori_pekerjaan');
 		return $query->result();
 	}
+
+	
 }
 
 ?>
