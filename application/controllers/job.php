@@ -14,6 +14,9 @@ class job extends CI_Controller{
 		parent::__construct();
 		$this->load->library('pagination');
 		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		$this->load->library('session');
 		$this->load->model('model_job');
 	}
 
@@ -48,11 +51,29 @@ class job extends CI_Controller{
 	    $data['job'] = $this->model_job->data($config['per_page'],$from);
 		$this->load->view('view_job',$data);
 	}
+
+	public function tambah_lowongan(){
+		$this->form_validation->set_rules('kode_kategori_pekerjaan','Kode Kategori Pekerjaa','required');
+		$this->form_validation->set_rules('kode_member','Kode Member','required');
+		$this->form_validation->set_rules('nama_pekerjaan','Nama Pekerjaan','required');
+		$this->form_validation->set_rules('deskripsi_pekerjaan','Deskripsi Pekerjaan','required');
+		$this->form_validation->set_rules('lama_pengerjaan','Lama Pengerjaan','required');
+
+		if($this->form_validation->run() == FALSE){
+			$data['kategori'] = $this->model_job->tampil_kategori();
+			$data['member'] = $this->model_job->tampil_member();
+			$this->load->view('view_add_job',$data);
+		}
+		else{
+			$this->model_job->tambah_job();
+			$sukses = "<div class='alert alert-success'>Data anda berhasil masuk</div>";
+			$this->session->set_flashdata("sukses",$sukses);
+			redirect('job/index');
+		}
+	
+
+	}
 }
-
-
-
-
 
 
 ?>

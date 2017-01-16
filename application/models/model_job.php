@@ -31,6 +31,39 @@ class model_job extends CI_Model{
 		return $query= $this->db->get('pekerjaan,kategori_pekerjaan')->num_rows();
 	}
 
+	public function tambah_job(){
+		$kode_pekerjaan = $this->input->post('kode_pekerjaan');
+		$kode_kategori_pekerjaan = $this->input->post('kode_kategori_pekerjaan');
+		$kode_member = $this->input->post('kode_member');
+		$nama_pekerjaan = $this->input->post('nama_pekerjaan');
+		$deskripsi_pekerjaan = $this->input->post('deskripsi_pekerjaan');
+		$lama_pengerjaan = $this->input->post('lama_pengerjaan');
+
+		$data = array(
+			'kode_pekerjaan' => $kode_pekerjaan,
+			'kode_kategori_pekerjaan' => $kode_kategori_pekerjaan,
+			'kode_member' => $kode_member,
+			'nama_pekerjaan' => $nama_pekerjaan,
+			'deskripsi_pekerjaan' => $deskripsi_pekerjaan,
+			'lama_pengerjaan' => $lama_pengerjaan
+
+			);
+
+		$this->db->insert('pekerjaan',$data);
+	}
+
+	public function tampil_kategori(){
+		$this->db->select('kode_kategori_pekerjaan,nama_kategori_pekerjaan');
+		$query = $this->db->get('kategori_pekerjaan');
+		return $query->result();
+	}
+
+	public function tampil_member(){
+		$this->db->select('kode_member,nama_member');
+		$query = $this->db->get('member');
+		return $query->result();
+	}
+
 }
 
 

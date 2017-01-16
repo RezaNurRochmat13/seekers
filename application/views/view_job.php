@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		        <li><a href="<?php echo site_url('services/index')?>">Layanan</a></li>
 		        <li><a href="<?php echo site_url('login/index')?>">Blog</a></li>
 		        <li><a href="<?php echo site_url('login/index')?>">Masuk</a></li>
-		        <button type="button" class="btn btn-warning btn-lg"><li><a href="<?php echo site_url('register/index')?>">Daftar</a></li></button>
+		       <a href="<?php echo site_url('register/tambah_member')?>" class="btn btn-warning btn-lg">Daftar</a>
 	        </ul>
 	    </div>
 	    <div class="clearfix"> </div>
@@ -65,15 +65,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    </div> 
 </div>	 -->
 <div class="container">
+
     <div class="single">  
 	   <div class="col-md-9 single_right">
+
 	      <div class="but_list">
+	      	 <div class="col-md-9">
+              <a href="<?php echo site_url('job/tambah_lowongan')?>" class="btn btn-primary btn-lg">Iklan Lowongan</a>
+            </div><br>
+				
 	       <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
 			<ul id="myTab" class="nav nav-tabs" role="tablist">
-			  <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Daftar Pekerjaan</a></li>
+			  <br><li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Daftar Pekerjaan</a></li>
 		   </ul>
+
+		   
+
+
 		<div id="myTabContent" class="tab-content">
-		
+
 		  <div role="tabpanel" class="tab-pane fade in active" id="home" aria-labelledby="home-tab">
 		  		<?php foreach ($job as $data) { ?>
 		    <div class="tab_grid">
@@ -81,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				    <div class="thumb"><a href="jobs_single.html"><img src="<?php echo base_url().'web/'?>images/a2.jpg" class="img-responsive" alt=""/></a></div>
 				    <div class="jobs_right">
 						<div class="date"><?php echo date("d F",strtotime($data->lama_pengerjaan)); ?><span><?php echo date("Y",strtotime($data->lama_pengerjaan)); ?></span></div>
-						<div class="date_desc"><h6 class="title"><a href="jobs_single.html">Front-end Developer</a></h6>
+						<div class="date_desc"><h6 class="title"><a href="jobs_single.html"><?php echo $data->nama_pekerjaan?></a></h6>
 						  <span class="meta">Envato, Sydney, AU</span>
 						</div>
 						<div class="clearfix"> </div>
